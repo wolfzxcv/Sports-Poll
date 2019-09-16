@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Sports-Poll/static/css/main.4bbcf444.chunk.css",
+    "main.js": "/Sports-Poll/static/js/main.739ed875.chunk.js",
+    "main.js.map": "/Sports-Poll/static/js/main.739ed875.chunk.js.map",
+    "runtime~main.js": "/Sports-Poll/static/js/runtime~main.83636eba.js",
+    "runtime~main.js.map": "/Sports-Poll/static/js/runtime~main.83636eba.js.map",
+    "static/js/2.0fcde91c.chunk.js": "/Sports-Poll/static/js/2.0fcde91c.chunk.js",
+    "static/js/2.0fcde91c.chunk.js.map": "/Sports-Poll/static/js/2.0fcde91c.chunk.js.map",
+    "index.html": "/Sports-Poll/index.html",
+    "precache-manifest.c746a6b598b69467a7ebd32f23e1bbd6.js": "/Sports-Poll/precache-manifest.c746a6b598b69467a7ebd32f23e1bbd6.js",
+    "service-worker.js": "/Sports-Poll/service-worker.js",
+    "static/css/main.4bbcf444.chunk.css.map": "/Sports-Poll/static/css/main.4bbcf444.chunk.css.map",
+    "static/media/bg.jpg": "/Sports-Poll/static/media/bg.d4317ec0.jpg"
+  }
+}
