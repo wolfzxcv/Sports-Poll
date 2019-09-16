@@ -16,7 +16,7 @@ const theme = {
     status: `'Roboto Mono', monospace`,
     main: `'Patua One', cursive;`,
   },
-  fontSize: ['16px', '20px', '24px'],
+  fontSize: ['16px', '22px', '28px', '36px'],
 };
 
 export default theme;
