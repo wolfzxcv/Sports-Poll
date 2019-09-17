@@ -11,16 +11,14 @@ const Board = () => {
     let chooseOne;
 
     console.log(`You voted for ${team}`);
-    const noFinishedEvent = data.filter(d => d.status !== 'FINISHED');
 
     const makeSureNoRepeat = () => {
-      chooseOne =
-        noFinishedEvent[Math.floor(Math.random() * noFinishedEvent.length)];
+      chooseOne = data[Math.floor(Math.random() * data.length)];
     };
 
     makeSureNoRepeat();
 
-    while (chooseOne.sport === ifRepeat) {
+    while (chooseOne.sport === ifRepeat || chooseOne.state === 'FINISHED') {
       makeSureNoRepeat();
     }
 
