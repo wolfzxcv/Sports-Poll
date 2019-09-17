@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Sports-Poll/static/css/main.4bbcf444.chunk.css",
-    "main.js": "/Sports-Poll/static/js/main.6fb80d70.chunk.js",
-    "main.js.map": "/Sports-Poll/static/js/main.6fb80d70.chunk.js.map",
+    "main.js": "/Sports-Poll/static/js/main.325c3ef0.chunk.js",
+    "main.js.map": "/Sports-Poll/static/js/main.325c3ef0.chunk.js.map",
     "runtime~main.js": "/Sports-Poll/static/js/runtime~main.83636eba.js",
     "runtime~main.js.map": "/Sports-Poll/static/js/runtime~main.83636eba.js.map",
     "static/js/2.4b5fb312.chunk.js": "/Sports-Poll/static/js/2.4b5fb312.chunk.js",
     "static/js/2.4b5fb312.chunk.js.map": "/Sports-Poll/static/js/2.4b5fb312.chunk.js.map",
     "index.html": "/Sports-Poll/index.html",
-    "precache-manifest.6a3397eac885e0d14072995e2d7da259.js": "/Sports-Poll/precache-manifest.6a3397eac885e0d14072995e2d7da259.js",
+    "precache-manifest.b0d20e273e2d1aea7a61f12da423b8a2.js": "/Sports-Poll/precache-manifest.b0d20e273e2d1aea7a61f12da423b8a2.js",
     "service-worker.js": "/Sports-Poll/service-worker.js",
     "static/css/main.4bbcf444.chunk.css.map": "/Sports-Poll/static/css/main.4bbcf444.chunk.css.map",
     "static/media/bg.jpg": "/Sports-Poll/static/media/bg.d4317ec0.jpg"
