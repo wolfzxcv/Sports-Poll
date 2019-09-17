@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 <br>
 To run this project.......
 
-1. Dowload or clone this project
+1. Download or clone this project
 2. To install all the dependencies of this project. <br>
    `npm install`
 
