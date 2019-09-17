@@ -33,6 +33,25 @@ const Board = () => {
     // set data into local storage
     localStorage.setItem('sport poll', JSON.stringify(chooseOne));
     localStorage.setItem('sport odds', JSON.stringify([odds1, odds2, odds3]));
+
+    // let's play some music!!!!!!!!
+    const playAudio = () => {
+      const sound = new Audio(
+        'http://www.chiptape.com/chiptape/sounds/medium/drop.wav'
+      );
+      const playPromise = sound.play();
+
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            // console.log('audio play successfully');
+          })
+          .catch(() => {
+            console.log('error');
+          });
+      }
+    };
+    playAudio();
   };
 
   // when firstly rendering the app, check if there's any previous data in local storage, if yes, then get the data from local storage; if not, then generate new data
