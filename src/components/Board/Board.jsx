@@ -1,16 +1,37 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import data from '../../asset/test-assignment.json';
-import { AppContext } from '../../context/AppContext';
 
 const Board = () => {
-  const {
-    display,
-    setDisplay,
-    displayOdds,
-    setDisplayOdds,
-    chooseNext,
-  } = useContext(AppContext);
+  const [display, setDisplay] = useState([]);
+  const [displayOdds, setDisplayOdds] = useState([]);
+
+  const chooseOneFunction = (category, team) => {
+    const ifRepeat = category;
+    let chooseOne;
+
+    console.log(`You voted for ${team}`);
+    const noFinishedEvent = data.filter(d => d.status !== 'FINISHED');
+
+    const makeSureNoRepeat = () => {
+      chooseOne =
+        noFinishedEvent[Math.floor(Math.random() * noFinishedEvent.length)];
+    };
+
+    makeSureNoRepeat();
+
+    while (chooseOne.sport === ifRepeat) {
+      makeSureNoRepeat();
+    }
+
+    const odds1 = (Math.random() * (4 - 1) + 1).toFixed(2);
+    const odds2 = (Math.random() * (4 - 1) + 1).toFixed(2);
+    const odds3 = (Math.random() * (4 - 1) + 1).toFixed(2);
+    setDisplay(chooseOne);
+    setDisplayOdds([odds1, odds2, odds3]);
+    localStorage.setItem('sport poll', JSON.stringify(chooseOne));
+    localStorage.setItem('sport odds', JSON.stringify([odds1, odds2, odds3]));
+  };
 
   useEffect(() => {
     const getData = JSON.parse(localStorage.getItem('sport poll'));
@@ -19,19 +40,7 @@ const Board = () => {
       setDisplay(getData);
       setDisplayOdds(getOdds);
     } else {
-      const noFinishedEvent = data.filter(d => d.status !== 'FINISHED');
-
-      const chooseOne =
-        noFinishedEvent[Math.floor(Math.random() * noFinishedEvent.length)];
-
-      const odds1 = (Math.random() * (4 - 1) + 1).toFixed(2);
-      const odds2 = (Math.random() * (4 - 1) + 1).toFixed(2);
-      const odds3 = (Math.random() * (4 - 1) + 1).toFixed(2);
-
-      setDisplay(chooseOne);
-      setDisplayOdds([odds1, odds2, odds3]);
-      localStorage.setItem('sport poll', JSON.stringify(chooseOne));
-      localStorage.setItem('sport odds', JSON.stringify([odds1, odds2, odds3]));
+      chooseOneFunction('', '');
     }
   }, []);
 
@@ -44,15 +53,15 @@ const Board = () => {
       </div>
       <div className='group'>{display.group}</div>
       <div className='teams'>
-        <div onClick={chooseNext}>
+        <div onClick={() => chooseOneFunction(display.sport, display.homeName)}>
           <div className='team-name'>{display.homeName}</div>
           <div className='odds'>{displayOdds[0]}</div>
         </div>
-        <div onClick={chooseNext}>
+        <div onClick={() => chooseOneFunction(display.sport, 'Draw')}>
           <div className='draw'>Draw</div>
           <div className='odds'>{displayOdds[1]}</div>
         </div>
-        <div onClick={chooseNext}>
+        <div onClick={() => chooseOneFunction(display.sport, display.awayName)}>
           <div className='team-name'>{display.awayName}</div>
           <div className='odds'>{displayOdds[2]}</div>
         </div>
