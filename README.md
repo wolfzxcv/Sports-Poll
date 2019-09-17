@@ -12,4 +12,5 @@ To run this project.......
 
 4. To launch the test runner in the interactive watch mode <br>
    `npm test`<br>
-   Go to the [website](https://create-react-app.dev/docs/running-tests) for more information.
+   Go to the [website](https://create-react-app.dev/docs/running-tests) for more information.<br><br>
+   Or you can see the demo by clicking [here](https://wolfzxcv.github.io/Sports-Poll/)

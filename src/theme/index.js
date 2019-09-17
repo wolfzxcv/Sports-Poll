@@ -4,6 +4,7 @@ const black = '#000000';
 const red = '#800000';
 const darkBlue = '#020024';
 const green = '#1c411c';
+const yellow = '#69f90e';
 
 const theme = {
   colors: {
@@ -12,6 +13,7 @@ const theme = {
     red,
     darkBlue,
     green,
+    yellow,
   },
   fonts: {
     category: `'Righteous', cursive`,

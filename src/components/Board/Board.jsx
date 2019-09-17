@@ -199,7 +199,7 @@ const StyledBoard = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        color: #69f90e;
+        color: ${props => props.theme.colors.yellow};
         background: rgb(19, 11, 107);
         background: radial-gradient(
           circle,
