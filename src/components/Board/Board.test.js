@@ -10,7 +10,10 @@ it('should contain these classes', () => {
   expect(wrapper.exists('.country')).toBe(true);
   expect(wrapper.exists('.group')).toBe(true);
   expect(wrapper.exists('.teams')).toBe(true);
+  expect(wrapper.exists('.border-right')).toBe(true);
   expect(wrapper.exists('.team-name')).toBe(true);
   expect(wrapper.exists('.draw')).toBe(true);
   expect(wrapper.exists('.odds')).toBe(true);
+  expect(wrapper.exists('.one')).toBe(true);
+  expect(wrapper.exists('.three')).toBe(true);
 });

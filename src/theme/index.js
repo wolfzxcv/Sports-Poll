@@ -2,14 +2,16 @@
 const white = '#F5F5DC';
 const black = '#000000';
 const red = '#800000';
-const orange = '#FF7F50';
+const darkBlue = '#020024';
+const green = '#1c411c';
 
 const theme = {
   colors: {
     white,
     black,
     red,
-    orange,
+    darkBlue,
+    green,
   },
   fonts: {
     category: `'Righteous', cursive`,
