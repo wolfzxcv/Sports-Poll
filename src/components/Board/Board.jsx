@@ -203,10 +203,6 @@ const StyledBoard = styled.div`
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    .border-right {
-      border-right: 2px solid ${props => props.theme.colors.white};
-    }
-
     div {
       height: 100%;
       width: 100%;
@@ -264,6 +260,9 @@ const StyledBoard = styled.div`
           transform: scale(1.05);
         }
       }
+      .border-right {
+        border-right: 2px solid ${props => props.theme.colors.white};
+      }
     }
     .odds {
       line-height: 2;
@@ -286,6 +285,9 @@ const StyledBoard = styled.div`
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    .border-right {
+      border-right: 2px solid ${props => props.theme.colors.white};
     }
     .one {
       border-bottom-left-radius: 20px;
