@@ -86,7 +86,7 @@ const Board = () => {
       </div>
       <div className='teams'>
         <div
-          className='border-right'
+          className='border-right border-bottom'
           onClick={() => chooseOneFunction(display.sport, display.homeName)}
         >
           <div className='team-name'>
@@ -97,13 +97,13 @@ const Board = () => {
           </div>
         </div>
         <div
-          className='border-right'
+          className='border-right border-bottom'
           onClick={() => chooseOneFunction(display.sport, 'Draw')}
         >
           <div className='draw'>
             <span>Draw</span>
           </div>
-          <div className='odds'>
+          <div className='odds two'>
             <span>{displayOdds[1]}</span>
           </div>
         </div>
@@ -126,6 +126,7 @@ const StyledBoard = styled.div`
   justify-content: space-evenly;
   align-items: center;
   box-shadow: 20px 20px 20px 0px rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
 
   div {
     width: 100%;
@@ -138,6 +139,8 @@ const StyledBoard = styled.div`
   .category {
     display: flex;
     border-bottom: 2px solid ${props => props.theme.colors.white};
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
     background: rgb(2, 0, 36);
     background: radial-gradient(
       circle,
@@ -197,9 +200,11 @@ const StyledBoard = styled.div`
     flex-grow: 6;
     flex-shrink: 1;
     flex-basis: 0%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 
     .border-right {
-      border-right: 1px solid ${props => props.theme.colors.white};
+      border-right: 2px solid ${props => props.theme.colors.white};
     }
 
     div {
@@ -246,17 +251,13 @@ const StyledBoard = styled.div`
     width: 768px;
     height: 400px;
     background-color: ${props => props.theme.colors.white};
-    border-radius: 20px;
+
     .category {
       flex-grow: 2;
       flex-shrink: 1;
       flex-basis: 0%;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 20px;
     }
     .teams {
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
       .team-name,
       .draw {
         &:hover {
@@ -277,8 +278,8 @@ const StyledBoard = styled.div`
 
   @media only screen and (max-width: 768px) and (orientation: landscape) {
     /* landscape phones */
-    width: 100vw;
-    height: 100vh;
+    width: 90vw;
+    height: 90vh;
     background-color: ${props => props.theme.colors.white};
     .group,
     .odds {
@@ -286,12 +287,18 @@ const StyledBoard = styled.div`
       justify-content: center;
       align-items: center;
     }
+    .one {
+      border-bottom-left-radius: 20px;
+    }
+    .three {
+      border-bottom-right-radius: 20px;
+    }
   }
 
   @media only screen and (max-width: 768px) and (orientation: portrait) {
     /* portrait phones */
-    width: 100vw;
-    height: 100vh;
+    width: 90vw;
+    height: 90vh;
     background-color: ${props => props.theme.colors.white};
 
     .group,
@@ -303,6 +310,14 @@ const StyledBoard = styled.div`
     .teams {
       display: flex;
       flex-direction: column;
+      .border-bottom {
+        border-bottom: 2px solid ${props => props.theme.colors.white};
+      }
+    }
+
+    .three {
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
     }
   }
 `;

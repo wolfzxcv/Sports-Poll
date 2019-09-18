@@ -15,5 +15,7 @@ it('should contain these classes', () => {
   expect(wrapper.exists('.draw')).toBe(true);
   expect(wrapper.exists('.odds')).toBe(true);
   expect(wrapper.exists('.one')).toBe(true);
+  expect(wrapper.exists('.two')).toBe(true);
   expect(wrapper.exists('.three')).toBe(true);
+  expect(wrapper.exists('.border-bottom')).toBe(true);
 });
