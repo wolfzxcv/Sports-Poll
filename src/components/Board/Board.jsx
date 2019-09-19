@@ -20,7 +20,7 @@ const Board = () => {
     makeSureNoRepeat();
 
     // after voting picking another random poll with different category
-    while (chooseOne.sport === ifRepeat || chooseOne.state === 'FINISHED') {
+    while (chooseOne.sport === ifRepeat) {
       makeSureNoRepeat();
     }
     // generate random odds between 1 to 4
@@ -74,10 +74,18 @@ const Board = () => {
       <div className='status-and-country'>
         <div
           className={
-            display.state === 'STARTED' ? 'status green' : 'status red'
+            display.state === 'FINISHED'
+              ? 'status yellow'
+              : display.state === 'STARTED'
+              ? 'status green'
+              : 'status red'
           }
         >
-          {display.state === 'STARTED' ? 'STARTED' : 'NOT STARTED'}
+          {display.state === 'FINISHED'
+            ? 'FINISHED'
+            : display.state === 'STARTED'
+            ? 'STARTED'
+            : 'NOT STARTED'}
         </div>
         <div className='country'>{display.country}</div>
       </div>
@@ -167,6 +175,9 @@ const StyledBoard = styled.div`
       width: 50vw;
       margin-left: 20px;
     }
+    .yellow {
+      color: ${props => props.theme.colors.yellow};
+    }
 
     .green {
       color: ${props => props.theme.colors.green};
@@ -219,7 +230,7 @@ const StyledBoard = styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
-        color: ${props => props.theme.colors.yellow};
+        color: ${props => props.theme.colors.lightgreen};
         background: rgb(19, 11, 107);
         background: radial-gradient(
           circle,
