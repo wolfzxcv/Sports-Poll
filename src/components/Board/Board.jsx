@@ -1,40 +1,44 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import ReactCountryFlag from 'react-country-flag';
 import data from '../../asset/test-assignment.json';
 
 const Board = () => {
   const [display, setDisplay] = useState([]);
   const [displayOdds, setDisplayOdds] = useState([]);
 
-  const chooseOneFunction = (category, team) => {
+  // It's why I know there are only 3 countries in data
+  // console.log([...new Set(data.map(d => d.country))]);
+
+  const chooseOneFunction = category => {
     const ifRepeat = category;
     let chooseOne;
 
-    console.log(`You voted for ${team}`);
+    // console.log(`You voted for ${team}`);
 
-    // pick a random poll
+    // Pick a random poll
     const makeSureNoRepeat = () => {
       chooseOne = data[Math.floor(Math.random() * data.length)];
     };
 
     makeSureNoRepeat();
 
-    // after voting picking another random poll with different category
+    // After voting, picking another random poll with different category
     while (chooseOne.sport === ifRepeat) {
       makeSureNoRepeat();
     }
-    // generate random odds between 1 to 4
+    // Generate random odds between 1 to 4
     const odds1 = (Math.random() * (4 - 1) + 1).toFixed(2);
     const odds2 = (Math.random() * (4 - 1) + 1).toFixed(2);
     const odds3 = (Math.random() * (4 - 1) + 1).toFixed(2);
     setDisplay(chooseOne);
     setDisplayOdds([odds1, odds2, odds3]);
 
-    // set data into local storage
+    // Set data into local storage
     localStorage.setItem('sport poll', JSON.stringify(chooseOne));
     localStorage.setItem('sport odds', JSON.stringify([odds1, odds2, odds3]));
 
-    // let's play some music!!!!!!!!
+    // Let's play some music!!!!!!!!
     const playAudio = () => {
       const sound = new Audio(
         'http://www.chiptape.com/chiptape/sounds/medium/drop.wav'
@@ -54,7 +58,7 @@ const Board = () => {
     playAudio();
   };
 
-  // when firstly rendering the app, check if there's any previous data in local storage, if yes, then get the data from local storage; if not, then generate new data
+  // When firstly rendering the app, check if there's any previous data in local storage, if yes, then get the data from local storage; if not, then generate new data
   useEffect(() => {
     const getData = JSON.parse(localStorage.getItem('sport poll'));
     const getOdds = JSON.parse(localStorage.getItem('sport odds'));
@@ -87,7 +91,19 @@ const Board = () => {
             ? 'STARTED'
             : 'NOT STARTED'}
         </div>
-        <div className='country'>{display.country}</div>
+
+        <div className='country'>
+          <ReactCountryFlag
+            code={
+              display.country === 'SWEDEN'
+                ? 'se'
+                : display.country === 'ENGLAND'
+                ? 'gb'
+                : 'fr'
+            }
+            svg
+          />
+        </div>
       </div>
       <div className='group'>
         <span>{display.group}</span>
@@ -186,10 +202,11 @@ const StyledBoard = styled.div`
       color: ${props => props.theme.colors.red};
     }
     .country {
-      text-align: right;
       width: 50vw;
       color: ${props => props.theme.colors.darkBlue};
       margin-right: 20px;
+      text-align: right;
+      line-height: 1.8;
     }
   }
 
