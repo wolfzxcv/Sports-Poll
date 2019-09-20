@@ -231,7 +231,19 @@ const StyledBoard = styled.div`
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 
-    div {
+    > div:nth-child(1) {
+      flex: 10;
+    }
+
+    > div:nth-child(2) {
+      flex: 9;
+    }
+
+    > div:nth-child(3) {
+      flex: 10;
+    }
+
+    > div {
       height: 100%;
       width: 100%;
       &:hover {
@@ -282,8 +294,7 @@ const StyledBoard = styled.div`
       flex-basis: 0%;
     }
     .teams {
-      .team-name,
-      .draw {
+      > div {
         &:hover {
           transform: scale(1.05);
         }
